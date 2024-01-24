@@ -359,9 +359,9 @@ public final class Table extends Observable {
                     invokeLater(() -> {
                         gameHistoryPanel.redo(chessBoard, moveLog);
                         takenPiecesPanel.redo(moveLog);
-                        //if (gameSetup.isAIPlayer(chessBoard.currentPlayer())) {
+                        
                             Table.get().moveMadeUpdate(PlayerType.HUMAN);
-                        //}
+                        
                         boardPanel.drawBoard(chessBoard);
                         debugPanel.redo();
                     });

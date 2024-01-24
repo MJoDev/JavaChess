@@ -102,7 +102,7 @@ class GameHistoryPanel extends JPanel {
     private static class DataModel extends DefaultTableModel {
 
         private final List<Row> values;
-        private static final String[] NAMES = {"White", "Black"};
+        private static final String[] NAMES = {"Blanco", "Negro"};
 
         DataModel() {
             this.values = new ArrayList<>();
