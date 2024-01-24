@@ -6,7 +6,7 @@ import com.chess.engine.classic.pieces.Piece;
 import com.chess.engine.classic.pieces.Rook;
 
 import java.util.Objects;
-
+/* Clase de movimiento que se encarga de todos los movimientos posibles para los jugadores */
 public abstract class Move {
 
     protected final Board board;
@@ -85,8 +85,10 @@ public abstract class Move {
 
     public Board execute() {
         final Board.Builder builder = new Builder();
+        //BASICAMENTE, TOMAMOS TODAS LAS PIEZAS QUE NO DESEAMOS MOVER Y GUARDAMOS SU POSICION
         this.board.currentPlayer().getActivePieces().stream().filter(piece -> !this.movedPiece.equals(piece)).forEach(builder::setPiece);
         this.board.currentPlayer().getOpponent().getActivePieces().forEach(builder::setPiece);
+        //MOVER LA PIEZA MOVIDA
         builder.setPiece(this.movedPiece.movePiece(this));
         builder.setMoveMaker(this.board.currentPlayer().getOpponent().getAlliance());
         builder.setMoveTransition(this);
@@ -391,7 +393,7 @@ public abstract class Move {
                 }
             }
             builder.setPiece(this.movedPiece.movePiece(this));
-            //calling movePiece here doesn't work, we need to explicitly create a new Rook
+            //Llamar a movePiece aqui no funciona al pareces, necesitamos crear una nueva Torre
             builder.setPiece(new Rook(this.castleRook.getPieceAllegiance(), this.castleRookDestination, false));
             builder.setMoveMaker(this.board.currentPlayer().getOpponent().getAlliance());
             builder.setMoveTransition(this);
@@ -546,7 +548,7 @@ public abstract class Move {
 
         @Override
         public Board execute() {
-            throw new RuntimeException("cannot execute null move!");
+            throw new RuntimeException("No se puede ejecutar un movimiento nulo!");
         }
 
         @Override
@@ -558,7 +560,7 @@ public abstract class Move {
     public static class MoveFactory {
 
         private MoveFactory() {
-            throw new RuntimeException("Not instantiatable!");
+            throw new RuntimeException("No es instanciable!");
         }
 
         public static Move getNullMove() {

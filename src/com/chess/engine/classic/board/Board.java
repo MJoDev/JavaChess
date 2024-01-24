@@ -14,6 +14,8 @@ import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+
+/*Clase del tablero que se encarga de inicializar a los jugadores y a las piezas */
 public final class Board {
 
     private final Map<Integer, Piece> boardConfig;
@@ -61,6 +63,7 @@ public final class Board {
         return "-";
     }
 
+    //Metodo para obtencion de las piezas blancas y negras para el Jugador
     public Collection<Piece> getBlackPieces() {
         return this.blackPieces;
     }
@@ -79,6 +82,7 @@ public final class Board {
                              this.blackPlayer.getLegalMoves().stream()).collect(Collectors.toList());
     }
 
+    //Metodo para obtener a los jugadores negro y blanco
     public WhitePlayer whitePlayer() {
         return this.whitePlayer;
     }
@@ -86,7 +90,7 @@ public final class Board {
     public BlackPlayer blackPlayer() {
         return this.blackPlayer;
     }
-
+    //Metodo para obtener al jugador actual
     public Player currentPlayer() {
         return this.currentPlayer;
     }
@@ -109,7 +113,7 @@ public final class Board {
 
     private static Board createStandardBoardImpl() {
         final Builder builder = new Builder();
-        // Black Layout
+        //Piezas negras
         builder.setPiece(new Rook(Alliance.BLACK, 0));
         builder.setPiece(new Knight(Alliance.BLACK, 1));
         builder.setPiece(new Bishop(Alliance.BLACK, 2));
@@ -126,7 +130,7 @@ public final class Board {
         builder.setPiece(new Pawn(Alliance.BLACK, 13));
         builder.setPiece(new Pawn(Alliance.BLACK, 14));
         builder.setPiece(new Pawn(Alliance.BLACK, 15));
-        // White Layout
+        // Piezas blancas
         builder.setPiece(new Pawn(Alliance.WHITE, 48));
         builder.setPiece(new Pawn(Alliance.WHITE, 49));
         builder.setPiece(new Pawn(Alliance.WHITE, 50));
@@ -143,9 +147,9 @@ public final class Board {
         builder.setPiece(new Bishop(Alliance.WHITE, 61));
         builder.setPiece(new Knight(Alliance.WHITE, 62));
         builder.setPiece(new Rook(Alliance.WHITE, 63));
-        //white to move
+        //Blanco a mover
         builder.setMoveMaker(Alliance.WHITE);
-        //build the board
+        //construir el tablero
         return builder.build();
     }
 

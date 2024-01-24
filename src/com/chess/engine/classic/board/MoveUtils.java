@@ -5,6 +5,7 @@ import java.util.List;
 
 import static com.chess.engine.classic.board.Move.*;
 
+/* Enumaricon que aporta utilidades a los Movimientos */
 public enum MoveUtils {
 
     INSTANCE;

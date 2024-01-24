@@ -2,6 +2,8 @@ package com.chess.engine.classic.board;
 
 import com.chess.engine.classic.board.Move.MoveStatus;
 
+
+/*Clase para ejecutar la transicion de los movimientos */
 public final class MoveTransition {
 
     private final Board fromBoard;

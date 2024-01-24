@@ -445,6 +445,7 @@ public final class Table extends Observable {
             this.removeAll();
             if(board.getPiece(this.tileId) != null) {
                 try{
+                    //Basicamente va a obtener el nombre de la allianza W o B, le concatena la inical de la pieza, por ejemplo K para el rey, y busca el archivo .gif
                     final BufferedImage image = ImageIO.read(new File(pieceIconPath +
                             board.getPiece(this.tileId).getPieceAllegiance().toString().substring(0, 1) + "" +
                             board.getPiece(this.tileId).toString() +

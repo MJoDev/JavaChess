@@ -6,11 +6,11 @@ import com.chess.engine.classic.pieces.Piece;
 import java.util.*;
 
 import static com.chess.engine.classic.board.Move.MoveFactory;
-
+/*Enumeracion que entre muchas cosas, se encarga de facilitar todo lo relacionado al tablero */
 public enum  BoardUtils {
 
     INSTANCE;
-
+    //Iniciamos las columnas y las filas
     public final List<Boolean> FIRST_COLUMN = initColumn(0);
     public final List<Boolean> SECOND_COLUMN = initColumn(1);
     public final List<Boolean> THIRD_COLUMN = initColumn(2);
@@ -33,6 +33,7 @@ public enum  BoardUtils {
     public static final int NUM_TILES_PER_ROW = 8;
     public static final int NUM_TILES = 64;
 
+    //iniciar columnas
     private static List<Boolean> initColumn(int columnNumber) {
         final Boolean[] column = new Boolean[NUM_TILES];
         Arrays.fill(column, false);
@@ -61,6 +62,7 @@ public enum  BoardUtils {
         return Collections.unmodifiableMap(positionToCoordinate);
     }
 
+    //Posiciones de todos las casillas del tablero
     private static List<String> initializeAlgebraicNotation() {
         return Collections.unmodifiableList(Arrays.asList(
                 "a8", "b8", "c8", "d8", "e8", "f8", "g8", "h8",
