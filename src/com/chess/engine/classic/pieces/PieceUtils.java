@@ -4,7 +4,7 @@ import com.chess.engine.classic.Alliance;
 import com.chess.engine.classic.board.BoardUtils;
 import com.google.common.collect.ImmutableTable;
 import com.google.common.collect.Table;
-
+/*Utilidades a usar*/ 
 enum PieceUtils {
 
     INSTANCE;

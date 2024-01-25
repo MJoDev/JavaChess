@@ -7,7 +7,7 @@ import com.chess.engine.classic.board.Move;
 import com.chess.engine.classic.board.Move.MajorAttackMove;
 import com.chess.engine.classic.board.Move.MajorMove;
 import com.chess.engine.classic.board.MoveUtils;
-
+/*Reina *//* La reina es la union del alfil con la torre */
 import java.util.*;
 
 public final class Queen extends Piece {

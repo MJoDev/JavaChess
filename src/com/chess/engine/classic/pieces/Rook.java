@@ -9,7 +9,7 @@ import com.chess.engine.classic.board.Move.MajorMove;
 import com.chess.engine.classic.board.MoveUtils;
 
 import java.util.*;
-
+/*Torre */
 public final class Rook extends Piece {
 
     private final static int[] CANDIDATE_MOVE_COORDINATES = { -8, -1, 1, 8 };

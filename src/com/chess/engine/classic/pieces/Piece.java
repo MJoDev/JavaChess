@@ -5,7 +5,7 @@ import com.chess.engine.classic.board.Board;
 import com.chess.engine.classic.board.Move;
 
 import java.util.Collection;
-
+/*Clase de las piezas */
 public abstract class Piece {
 
     final PieceType pieceType;

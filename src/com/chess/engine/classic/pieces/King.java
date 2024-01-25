@@ -9,8 +9,9 @@ import com.chess.engine.classic.board.Move.MajorMove;
 
 import java.util.*;
 
+/*Pieza del rey */
 public final class King extends Piece {
-
+    /*Coordenadas */
     private final static int[] CANDIDATE_MOVE_COORDINATES = { -9, -8, -7, -1, 1, 7, 8, 9 };
 
     private final static Map<Integer, int[]> PRECOMPUTED_CANDIDATES = computeCandidates();

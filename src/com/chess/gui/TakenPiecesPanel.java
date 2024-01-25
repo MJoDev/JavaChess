@@ -23,16 +23,19 @@ import com.chess.engine.classic.pieces.Piece;
 import com.chess.gui.Table.MoveLog;
 import com.google.common.primitives.Ints;
 
+/* Panel para mostrar las piezas tomadas */
 class TakenPiecesPanel extends JPanel {
 
     private final JPanel northPanel;
     private final JPanel southPanel;
 
     private static final long serialVersionUID = 1L;
+    /*Color del panel */
     private static final Color PANEL_COLOR = Color.decode("0xFDF5E6");
     private static final Dimension TAKEN_PIECES_PANEL_DIMENSION = new Dimension(40, 80);
     private static final EtchedBorder PANEL_BORDER = new EtchedBorder(EtchedBorder.RAISED);
 
+    /* clase */
     public TakenPiecesPanel() {
         super(new BorderLayout());
         setBackground(Color.decode("0xFDF5E6"));
@@ -45,7 +48,7 @@ class TakenPiecesPanel extends JPanel {
         add(this.southPanel, BorderLayout.SOUTH);
         setPreferredSize(TAKEN_PIECES_PANEL_DIMENSION);
     }
-
+    /* */
     public void redo(final MoveLog moveLog) {
         southPanel.removeAll();
         northPanel.removeAll();

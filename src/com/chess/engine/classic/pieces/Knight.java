@@ -8,7 +8,7 @@ import com.chess.engine.classic.board.Move.MajorAttackMove;
 import com.chess.engine.classic.board.Move.MajorMove;
 
 import java.util.*;
-
+/*Piezas del caballo */
 public final class Knight extends Piece {
 
     private final static int[] CANDIDATE_MOVE_COORDINATES = { -17, -15, -10, -6, 6, 10, 15, 17 };
