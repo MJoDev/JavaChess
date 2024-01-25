@@ -10,6 +10,7 @@ import com.chess.engine.classic.board.MoveUtils;
 
 import java.util.*;
 
+/* Clase del alfil, la primera piezas a disen;ar */
 public final class Bishop extends Piece {
 
     private final static int[] CANDIDATE_MOVE_COORDINATES = {-9, -7, 7, 9};
@@ -56,7 +57,7 @@ public final class Bishop extends Piece {
         return Collections.unmodifiableMap(candidates);
     }
 
-
+    /* Calcular movimientos legales */
     @Override
     public Collection<Move> calculateLegalMoves(final Board board) {
         final List<Move> legalMoves = new ArrayList<>();
@@ -93,6 +94,8 @@ public final class Bishop extends Piece {
         return this.pieceType.toString();
     }
 
+
+    //Exclusiones para los movimientos
     private static boolean isFirstColumnExclusion(final int position,
                                                   final int offset) {
         return (BoardUtils.INSTANCE.FIRST_COLUMN.get(position) &&
